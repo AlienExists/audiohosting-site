@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+
+  # База данных
+  postgres:
+    image: postgres:16-alpine
+    container_name: waveline-db
+    environment:
+      POSTGRES_DB: waveline
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # данные сохраняются между перезапусками
+      - ./waveline-server/schema.sql:/docker-entrypoint-initdb.d/schema.sql  # авто-миграция
+    ports:
+      - "5432:5432"  # можно подключиться с хоста через psql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Бэкенд
+  backend:
+    build: ./waveline-server
+    container_name: waveline-backend
+    environment:
+      DB_HOST: postgres      # имя сервиса postgres
+      DB_PORT: 5432
+      DB_NAME: waveline
+      DB_USER: postgres
+      DB_PASSWORD: secret
+      JWT_SECRET: your_super_secret_key_change_this
+      PORT: 3000
+    volumes:
+      - uploads_data:/app/uploads  # файлы сохраняются между перезапусками
+    depends_on:
+      postgres:
+        condition: service_healthy  # ждём пока postgres готов
+    ports:
+      - "3000:3000"  # для отладки
+
+  # Фронтенд
+  frontend:
+    build: ./site-audiohosting
+    container_name: waveline-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  uploads_data:

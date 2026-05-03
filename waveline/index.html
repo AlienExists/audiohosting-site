@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>Главная</title>
+
+</head>
+
+<body>
+
+    <!-- НАВИГАЦИЯ -->
+    <header class="nav">
+        <div class="nav__inner">
+
+            <a href="index.html" class="nav__logo">Waveline</a>
+
+            <nav class="nav__links">
+                <a href="index.html">Главная</a>
+                <a href="news.html">Новости</a>
+                <a href="genres.html">Жанры</a>
+                <a href="collections.html">Подборки</a>
+                <a href="artists.html">Исполнители</a>
+            </nav>
+
+            <div class="nav__right">
+                <div class="nav__search">
+                    <span class="nav__search-icon">⌕</span>
+                    <input class="nav__search-input" type="text" placeholder="Поиск треков, артистов...">
+                </div>
+                <button class="theme-toggle" id="themeToggle" title="Сменить тему">☀</button>
+                <a href="login.html" class="btn">Войти</a>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="section__inner">
+
+                <div class="section__head">
+                    <h2 class="section__title">Популярные треки</h2>
+                    <a href="tracks.html" class="section__link">Все треки →</a>
+                </div>
+
+                <div class="section__filters">
+                    <button class="filter-btn filter-btn--active" data-period="week">За неделю</button>
+                    <button class="filter-btn" data-period="month">За месяц</button>
+                    <button class="filter-btn" data-period="all">За все время</button>
+                </div>
+
+                <div class="track-list">
+
+                    <div class="track">
+
+                        <div class="track__cover" style="background: #e8e0f5;"></div>
+                        <div class="track__info">
+                            <span class="track__title">Примерчик трека</span>
+                            <span class="track__artist">Авторчик</span>
+                        </div>
+
+                        <div class="track__meta">
+                            <span class="track__plays">24k</span>
+                            <span class="track__duration">3:42</span>
+                        </div>
+                    </div>
+
+                    <div class="track">
+
+                        <div class="track__cover" style="background: #e8e0f5;"></div>
+                        <div class="track__info">
+                            <span class="track__title">Примерчик трека</span>
+                            <span class="track__artist">Авторчик</span>
+                        </div>
+
+                        <div class="track__meta">
+                            <span class="track__plays">24k</span>
+                            <span class="track__duration">3:42</span>
+                        </div>
+                    </div>
+
+                    <div class="track">
+
+                        <div class="track__cover" style="background: #e8e0f5;"></div>
+                        <div class="track__info">
+                            <span class="track__title">Примерчик трека</span>
+                            <span class="track__artist">Авторчик</span>
+                        </div>
+
+                        <div class="track__meta">
+                            <span class="track__plays">24k</span>
+                            <span class="track__duration">3:42</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section__inner">
+
+                <div class="section__head">
+                    <h2 class="section__title">Исполнители</h2>
+                    <a href="artists.html" class="section__link">Все исполнители →</a>
+                </div>
+
+                <div class="artists">
+
+                    <div class="artist">
+                        <div class="artist__avatar">K</div>
+                        <span class="artist__name">Kira.wav</span>
+                        <span class="artist__count">47 треков</span>
+                    </div>
+
+                    <div class="artist">
+                        <div class="artist__avatar">F</div>
+                        <span class="artist__name">FrequencyBooster</span>
+                        <span class="artist__count">50 треков</span>
+                    </div>
+
+                    <div class="artist">
+                        <div class="artist__avatar">S</div>
+                        <span class="artist__name">SwampShaker</span>
+                        <span class="artist__count">10 треков</span>
+                    </div>
+
+                    <div class="artist">
+                        <div class="artist__avatar">T</div>
+                        <span class="artist__name">Traktorrrfffunk</span>
+                        <span class="artist__count">5 треков</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section__inner">
+
+                <div class="section__head">
+                    <h2 class="section__title">Подборки</h2>
+                    <a href="collections.html" class="section__link">Все подборки →</a>
+                </div>
+
+                <div class="collections">
+
+                    <a href="collections.html" class="collection-card">
+                        <span class="collection-card__tag">Сезонная</span>
+                        <span class="collection-card__name">Весна 2026</span>
+                        <span class="collection-card__count">24 трека</span>
+                        <span class="collection-card__accent"></span>
+                    </a>
+
+                    <a href="collections.html" class="collection-card">
+                        <span class="collection-card__tag">Редакция</span>
+                        <span class="collection-card__name">Для работы</span>
+                        <span class="collection-card__count">31 трек</span>
+                        <span class="collection-card__accent"></span>
+                    </a>
+
+                    <a href="collections.html" class="collection-card">
+                        <span class="collection-card__tag">Пользователь</span>
+                        <span class="collection-card__name">Ночной город</span>
+                        <span class="collection-card__count">17 треков</span>
+                        <span class="collection-card__accent"></span>
+                    </a>
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section__inner">
+
+                <div class="section__head">
+                    <h2 class="section__title">Жанры</h2>
+                    <a href="genres.html" class="section__link">Все жанры →</a>
+                </div>
+
+                <div class="genres">
+                    <a href="genres.html" class="genre-tag">Электронная</a>
+                    <a href="genres.html" class="genre-tag">Рок</a>
+                    <a href="genres.html" class="genre-tag">Поп</a>
+                    <a href="genres.html" class="genre-tag">Джаз</a>
+                    <a href="genres.html" class="genre-tag">Классика</a>
+                    <a href="genres.html" class="genre-tag">Инди</a>
+                    <a href="genres.html" class="genre-tag">Хип-хоп</a>
+                    <a href="genres.html" class="genre-tag">Lo-Fi</a>
+                    <a href="genres.html" class="genre-tag">R'n'B</a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section__inner">
+
+                <div class="section__head">
+                    <h2 class="section__title">Новости</h2>
+                    <a href="news.html" class="section__link">Все новости →</a>
+                </div>
+
+                <div class="news">
+                    <a href="#" class="news-card">
+                        <span class="news-card__tag">Релиз</span>
+                        <p class="news-card__title">Новый альбом synthwave разрывает чарты</p>
+                        <span class="news-card__date">5 апреля 2026</span>
+                    </a>
+
+                    <a href="#" class="news-card">
+                        <span class="news-card__tag">Интервью</span>
+                        <p class="news-card__title">Почему lo-fi снова на вершине чартов</p>
+                        <span class="news-card__date">5 апреля 2026</span>
+                    </a>
+
+                    <a href="#" class="news-card">
+                        <span class="news-card__tag">Релиз</span>
+                        <p class="news-card__title">Новый альбом synthwave разрывает чарты</p>
+                        <span class="news-card__date">5 апреля 2026</span>
+                    </a>
+
+                    <a href="#" class="news-card">
+                        <span class="news-card__tag">Релиз</span>
+                        <p class="news-card__title">Новый альбом synthwave разрывает чарты</p>
+                        <span class="news-card__date">5 апреля 2026</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+    </main>
+
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer__inner">
+
+            <span class="footer__logo">Waveline</span>
+
+            <nav class="footer__links">
+                <a href="#">О проекте</a>
+                <a href="#">Условия</a>
+                <a href="#">Поддержка</a>
+                <a href="#">API</a>
+            </nav>
+
+            <span class="footer__copy">© 2026 Waveline</span>
+        </div>
+    </footer>
+
+    <div class="player" id="player" style="display:none;">
+  <div class="player__track">
+    <div class="player__cover" id="playerCover"></div>
+    <div class="player__info">
+      <span class="player__title" id="playerTitle">—</span>
+      <span class="player__artist" id="playerArtist">—</span>
+    </div>
+  </div>
+
+  <div class="player__controls">
+    <button class="player__btn" id="playerPrev">⏮</button>
+    <button class="player__btn player__btn--main" id="playerPlay">▶</button>
+    <button class="player__btn" id="playerNext">⏭</button>
+  </div>
+
+  <div class="player__progress-wrap">
+    <span class="player__time" id="playerCurrent">0:00</span>
+    <div class="player__bar" id="playerBar">
+      <div class="player__bar-fill" id="playerFill"></div>
+    </div>
+    <span class="player__time" id="playerDuration">0:00</span>
+  </div>
+
+  <div class="player__volume-wrap">
+    <span class="player__volume-icon">♪</span>
+    <input class="player__volume" id="playerVolume" type="range" min="0" max="1" step="0.02" value="0.8">
+  </div>
+</div>
+
+<audio id="audioEl" preload="metadata"></audio>
+
+<script src="theme-toggler.js"></script>
+<script type="module" src="main.js"></script>
+
+</body>
+
+</html>

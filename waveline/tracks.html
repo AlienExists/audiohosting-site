@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <title>Waveline — Треки</title>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Waveline</a>
+      <nav class="nav__links">
+        <a href="index.html">Главная</a>
+        <a href="tracks.html">Каталог</a>
+        <a href="news.html">Новости</a>
+        <a href="genres.html">Жанры</a>
+        <a href="collections.html">Подборки</a>
+        <a href="artists.html">Исполнители</a>
+      </nav>
+      <div class="nav__right">
+        <div class="nav__search">
+          <span class="nav__search-icon">⌕</span>
+          <input class="nav__search-input" type="text" placeholder="Поиск треков, артистов...">
+        </div>
+        <button class="theme-toggle" id="themeToggle">☀</button>
+        <a href="login.html" class="btn">Войти</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section__inner">
+        <h1 class="page-title">Каталог треков</h1>
+        <p class="page-subtitle">Все одобренные треки платформы</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner">
+
+        <div class="tracks-toolbar">
+          <div class="section__filters">
+            <button class="filter-btn filter-btn--active" data-period="all">Все</button>
+            <button class="filter-btn" data-period="week">За неделю</button>
+            <button class="filter-btn" data-period="month">За месяц</button>
+          </div>
+          <select class="select" id="genreFilter">
+            <option value="">Все жанры</option>
+          </select>
+        </div>
+
+        <div class="track-list" id="trackList">
+          <p style="color:var(--clr-muted)">Загружаем треки...</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div class="player" id="player" style="display:none;">
+    <!-- тот же HTML плеера что на index.html -->
+  </div>
+  <audio id="audioEl" preload="metadata"></audio>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__logo">Waveline</span>
+      <nav class="footer__links">
+        <a href="#">О проекте</a>
+        <a href="#">Условия</a>
+        <a href="#">Поддержка</a>
+      </nav>
+      <span class="footer__copy">© 2025 Waveline</span>
+    </div>
+  </footer>
+
+  <script type="module" src="tracks.js"></script>
+</body>
+</html>

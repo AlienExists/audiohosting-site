@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <title>Waveline — Админка</title>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Waveline</a>
+      <nav class="nav__links">
+        <a href="index.html">Сайт</a>
+        <a href="admin.html">Модерация</a>
+      </nav>
+      <div class="nav__right">
+        <button class="theme-toggle" id="themeToggle">☀</button>
+        <a href="login.html" class="btn">Войти</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Статистика -->
+    <section class="section">
+      <div class="section__inner">
+        <h1 class="page-title">Админ-панель</h1>
+        <div class="admin-stats" id="adminStats">
+          <div class="stat-card">
+            <span class="stat-card__value" id="statUsers">—</span>
+            <span class="stat-card__label">Пользователей</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value" id="statTracks">—</span>
+            <span class="stat-card__label">Треков всего</span>
+          </div>
+          <div class="stat-card stat-card--warn">
+            <span class="stat-card__value" id="statPending">—</span>
+            <span class="stat-card__label">На проверке</span>
+          </div>
+          <div class="stat-card stat-card--ok">
+            <span class="stat-card__value" id="statApproved">—</span>
+            <span class="stat-card__label">Одобрено</span>
+          </div>
+          <div class="stat-card stat-card--err">
+            <span class="stat-card__value" id="statRejected">—</span>
+            <span class="stat-card__label">Отклонено</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value" id="statPlays">—</span>
+            <span class="stat-card__label">Прослушиваний</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Очередь на модерацию -->
+    <section class="section">
+      <div class="section__inner">
+
+        <div class="section__head">
+          <h2 class="section__title">Треки на проверке</h2>
+          <div style="display:flex;gap:8px;">
+            <button class="filter-btn filter-btn--active" data-status="pending">Ожидают</button>
+            <button class="filter-btn" data-status="approved">Одобренные</button>
+            <button class="filter-btn" data-status="rejected">Отклонённые</button>
+          </div>
+        </div>
+
+        <div id="adminTrackList"></div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <audio id="audioEl" preload="metadata"></audio>
+  <div class="player" id="player" style="display:none;">
+    <!-- HTML плеера -->
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

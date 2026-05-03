@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="nav">
+        <div class="nav__inner container">
+            <a href="index.html" class="nav__logo">Waveline</a>
+            <nav class="nav__links">
+                <a href="catalog.html">Каталог</a>
+                <a href="upload.html">Загрузить</a>
+                <a href="profile.html">Профиль</a>
+            </nav>
+            <button class="btn btn--sm">Войти</button>
+        </div>
+    </header>
+    <main>
+  <section class="section">
+    <div class="section__inner">
+      <h1 class="page-title">Загрузить трек</h1>
+      <p class="page-subtitle">MP3, WAV, FLAC — до 50 МБ</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__inner">
+      <div class="upload-layout">
+
+        <!-- Левая колонка — файлы -->
+        <div class="upload-files">
+
+          <div class="dropzone" id="dropzone">
+            <span class="dropzone__icon">♪</span>
+            <p class="dropzone__text">Перетащи аудиофайл сюда</p>
+            <p class="dropzone__hint">MP3, WAV, FLAC</p>
+            <label class="btn">
+              Выбрать файл
+              <input type="file" id="audioInput" accept=".mp3,.wav,.flac,.ogg" hidden>
+            </label>
+          </div>
+
+          <div class="upload-selected" id="audioSelected" style="display:none;">
+            <span class="upload-selected__icon">♫</span>
+            <span class="upload-selected__name" id="audioName"></span>
+            <button class="upload-selected__remove" id="audioRemove">✕</button>
+          </div>
+
+        </div>
+
+        <!-- Правая колонка — метаданные -->
+        <div class="upload-meta">
+
+          <div class="form-group">
+            <label class="form-label">Название трека *</label>
+            <input class="form-input" type="text" id="trackTitle" placeholder="Как называется трек?">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Жанр</label>
+            <select class="form-input" id="trackGenre">
+              <option value="">— Выбрать жанр —</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Обложка</label>
+            <label class="cover-upload" id="coverUpload">
+              <div class="cover-upload__placeholder" id="coverPlaceholder">
+                <span>+ Добавить обложку</span>
+                <span style="font-size:12px;color:var(--clr-muted)">JPG, PNG</span>
+              </div>
+              <img class="cover-upload__preview" id="coverPreview" style="display:none;">
+              <input type="file" id="coverInput" accept=".jpg,.jpeg,.png" hidden>
+            </label>
+          </div>
+
+          <div id="uploadError" class="upload-error" style="display:none;"></div>
+
+          <button class="btn btn--primary btn--full" id="submitBtn" disabled>
+            Загрузить трек
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="upload.js"></script>
+</body>
+
+</html>
